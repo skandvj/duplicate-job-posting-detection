@@ -1,0 +1,39 @@
+services:
+  # Main application service
+  job-duplicate-detector:
+    build: .
+    container_name: job-duplicate-detector
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATA_PATH=data/jobs.csv.zip
+      - EMBEDDINGS_PATH=data/embeddings.pkl
+      - INDEX_PATH=data/faiss_index
+      - SIMILARITY_THRESHOLD=0.85
+    command: python src/main.py
+    networks:
+      - job-network
+
+  # API service (optional bonus)
+  job-api:
+    build: .
+    container_name: job-api
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATA_PATH=data/jobs.csv.zip
+      - EMBEDDINGS_PATH=data/embeddings.pkl
+      - INDEX_PATH=data/faiss_index
+      - SIMILARITY_THRESHOLD=0.85
+      - API_PORT=8000
+    ports:
+      - "8000:8000"
+    command: python -m uvicorn src.api.app:app --host 0.0.0.0 --port 8000
+    networks:
+      - job-network
+    depends_on:
+      - job-duplicate-detector
+
+networks:
+  job-network:
+    driver: bridge

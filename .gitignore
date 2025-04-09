@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# Data and ML
+*.pkl
+*.csv
+*.zip
+*.index
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite
