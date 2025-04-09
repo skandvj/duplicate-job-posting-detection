@@ -1,4 +1,4 @@
-# Job Duplicate Detector
+# NLP Powered - Duplicate Job Posting Detector
 
 This project implements a system for identifying duplicate job postings using text embeddings and vector search. It processes job descriptions, generates vector embeddings, builds a search index, and identifies potential duplicates based on textual similarity.
 
@@ -60,8 +60,8 @@ job-duplicate-detector/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/job-duplicate-detector.git
-   cd job-duplicate-detector
+   git clone https://github.com/yourusername/duplicate-job-posting-detection.git
+   cd duplicate-job-posting-detection
    ```
 
 2. Create an environment file from the template:
@@ -105,7 +105,7 @@ job-duplicate-detector/
 Before running the main application, you should explore the data:
 
 ```bash
-jupyter notebook notebooks/job_postings_eda.ipynb
+jupyter notebook eda.ipynb
 ```
 
 This notebook provides insights into the dataset structure and characteristics.
