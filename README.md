@@ -22,7 +22,7 @@ This project implements a system for identifying duplicate job postings using te
 Duplicate job postings can create confusion for job seekers and waste resources for employers. This project uses natural language processing and vector search techniques to identify potential duplicates with high accuracy. The system transforms job descriptions into vector embeddings, then uses efficient nearest-neighbor search algorithms to find similar postings.
 
 ## Architecture
-![Architecture](Duplicate_Job_Posting.png)
+![Architecture](data/Duplicate_Job_Posting.png)
 
 
 ## Project Structure
